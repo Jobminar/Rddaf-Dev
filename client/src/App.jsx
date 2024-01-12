@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home"; // Import your Home component
+import Home from "./components/Home/Home";
 import SignUpLogin from "./components/Login/SignUpLogin";
 import ListingProp from "./components/User/Property/ListingProp";
-
-import logo from "./logo.svg";
+import FloatingChatIcon from "./components/Chat/FloatingChatIcon"; // Adjust the import path based on your project structure
 import "./App.css";
 
 function App() {
@@ -15,6 +14,9 @@ function App() {
         <Route path="/" element={<SignUpLogin />} />
         <Route path="/listingproperty" element={<ListingProp />} />
       </Routes>
+
+      {/* Render the floating chat icon component */}
+      <FloatingChatIcon />
     </BrowserRouter>
   );
 }

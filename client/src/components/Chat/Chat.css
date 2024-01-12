@@ -1,0 +1,110 @@
+
+.chatbot-container {
+    background: linear-gradient(45deg, #8B4513, #ffdd1c) rgba(255, 255, 255, 0.5);
+    border-radius: 10px; /* You can adjust the value for the border-radius */
+    padding: 20px; /* Add padding for a more spaced look */
+    transition: opacity 0.3s ease-out; /* Add a transition for opacity on hover */
+  }
+  
+  /* Apply the transition effect on hover */
+  .chatbot-container:hover {
+    opacity: 0.8; /* Adjust the opacity value on hover as needed */
+  }
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    max-width: 70%;
+  }
+  
+  .bot {
+    background-color: #f0f0f0;
+  }
+  
+  .user {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .message:not(.read) {
+    font-weight: bold;
+  }
+  
+  /* Message animations */
+  .message-enter-active,
+  .message-exit-active {
+    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  }
+  
+  .message-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
+  .message-exit {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  
+  /* Message styles */
+  .message {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  /* Gradient Styles */
+  .message.bot {
+    background: linear-gradient(45deg, #f36a0e, #f39800);
+    align-self: flex-start;
+  }
+  
+  .message.user {
+    background: linear-gradient(45deg, #4caf50, #45a049);
+    color: #fff;
+    align-self: flex-end;
+  }
+  
+  /* Chatbot button animations and styles */
+  .button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .button-container.chatbot-open,
+  .button-container.wiggle-stop {
+    animation: none;
+  }
+  
+  /* Text field animation prevention */
+  .text-field-container {
+    animation: none !important;
+  }
+  
+  @keyframes wiggle {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-15px) rotate(-15deg);
+    }
+    50% {
+      transform: translateX(15px) rotate(15deg);
+    }
+    75% {
+      transform: translateX(-15px) rotate(-15deg);
+    }
+  }
+  
+
+  .message.bot:hover {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0.8; /* Adjust the opacity value as needed */
+  }
