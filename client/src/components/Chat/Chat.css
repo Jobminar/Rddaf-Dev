@@ -3,7 +3,7 @@
     background: linear-gradient(45deg, #8B4513, #ffdd1c) rgba(255, 255, 255, 0.5);
     border-radius: 10px; /* You can adjust the value for the border-radius */
     padding: 20px; /* Add padding for a more spaced look */
-    transition: opacity 0.3s ease-out; /* Add a transition for opacity on hover */
+    transition: opacity 0.3s ease-in; /* Add a transition for opacity on hover */
   }
   
   /* Apply the transition effect on hover */
@@ -106,5 +106,5 @@
 
   .message.bot:hover {
     transition: opacity 0.3s ease-in-out;
-    opacity: 0.8; /* Adjust the opacity value as needed */
+    opacity: 1; 
   }

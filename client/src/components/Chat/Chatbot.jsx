@@ -24,8 +24,19 @@ const reducer = (state, action) => {
   }
 };
 
-const handleButtonClick = (buttonValue, handleMessageSend) => {
-  handleMessageSend(buttonValue);
+const handleButtonClick = (button, handleMessageSend) => {
+  switch (button.actionType) {
+    case "sendMessage":
+      handleMessageSend(button.value);
+      break;
+    case "openModal":
+      break;
+    case "navigateToPage":
+      break;
+
+    default:
+      break;
+  }
 };
 
 const ChatMessage = ({ message, handleMessageSend }) => (
@@ -33,23 +44,36 @@ const ChatMessage = ({ message, handleMessageSend }) => (
     <Typography variant="caption" style={{ color: "white" }}>
       {message.timestamp.toLocaleString()}
     </Typography>
-    <Typography variant="body1" style={{ color: "white" }}>
-      {message.text}
-    </Typography>
-    {message.buttons && (
-      <div className="button-container">
-        {message.buttons.map((button, buttonIndex) => (
-          <Button
-            key={buttonIndex}
-            variant="contained"
-            color="primary"
-            onClick={() => handleButtonClick(button.value, handleMessageSend)}
-          >
-            {button.text}
-          </Button>
-        ))}
-      </div>
-    )}
+    {renderMessageContent(message, handleMessageSend)}
+  </div>
+);
+
+const renderMessageContent = (message, handleMessageSend) => {
+  if (Array.isArray(message.text)) {
+    // Handle array of objects (for specific intents with buttons)
+    return renderButtons(message.text, handleMessageSend);
+  } else {
+    // Handle regular text response
+    return (
+      <Typography variant="body1" style={{ color: "white" }}>
+        {message.text}
+      </Typography>
+    );
+  }
+};
+
+const renderButtons = (buttons, handleMessageSend) => (
+  <div className="button-container">
+    {buttons.map((button, buttonIndex) => (
+      <Button
+        key={buttonIndex}
+        variant="contained"
+        color="primary"
+        onClick={() => handleButtonClick(button, handleMessageSend)}
+      >
+        {button.text}
+      </Button>
+    ))}
   </div>
 );
 
@@ -99,15 +123,21 @@ const Chatbot = () => {
         },
       });
 
-      // Dispatch the bot's response
+      // Dispatch the bot's response based on intent
+      const botMessage = {
+        text: chatbotResponse,
+        type: "bot",
+        timestamp: new Date(),
+      };
+
+      if (Array.isArray(chatbotResponse)) {
+        // If response is an array, assume buttons
+        botMessage.buttons = chatbotResponse;
+      }
+
       dispatch({
         type: "addMessage",
-        payload: {
-          text: chatbotResponse,
-          type: "bot",
-          timestamp: new Date(),
-          buttons: data.buttons || [], // Ensure buttons is an array
-        },
+        payload: botMessage,
       });
     } catch (error) {
       console.error("Error sending message:", error.message);
