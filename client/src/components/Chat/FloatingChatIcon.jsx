@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import Chatbot from "./Chatbot";
 import LiveHelpIcon from "@mui/icons-material/LiveHelp";
 import Button from "@mui/material/Button";
 import "./Chat.css";
+import ChatbotComp from "./Chatbot";
 
 const FloatingChatIcon = () => {
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
@@ -41,7 +41,7 @@ const FloatingChatIcon = () => {
         <LiveHelpIcon style={{ color: "gold" }} />
       </Button>
 
-      {isChatbotOpen && <Chatbot toggleChatbot={toggleChatbot} />}
+      {isChatbotOpen && <ChatbotComp toggleChatbot={toggleChatbot} />}
     </div>
   );
 };

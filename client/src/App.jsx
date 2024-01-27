@@ -4,6 +4,7 @@ import Home from "./components/Home/Home";
 import SignUpLogin from "./components/Login/SignUpLogin";
 import ListingProp from "./components/User/Property/ListingProp";
 import FloatingChatIcon from "./components/Chat/FloatingChatIcon"; // Adjust the import path based on your project structure
+import PropSubmit from "./components/PropList/PropSubmit";
 import "./App.css";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<SignUpLogin />} />
         <Route path="/listingproperty" element={<ListingProp />} />
+        <Route path="/proplist" element={<PropSubmit />} />
       </Routes>
 
       {/* Render the floating chat icon component */}

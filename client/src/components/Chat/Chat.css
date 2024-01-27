@@ -108,3 +108,92 @@
     transition: opacity 0.3s ease-in-out;
     opacity: 1; 
   }
+
+  /* Add gold gradient to the chat container */
+.react-chatbot-kit-chat-container {
+  background: linear-gradient(to bottom, #584b00, #ffd700); /* Gold gradient */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Add gold gradient to the inner chat container */
+.react-chatbot-kit-chat-inner-container {
+  background: linear-gradient(to bottom, #927c00, #ffd700); /* Gold gradient */
+}
+
+/* Add gold gradient to the chat header */
+.react-chatbot-kit-chat-header {
+  background: linear-gradient(to bottom, #fff3b0, #ffd700); /* Gold gradient */
+  color: #ffffff;
+}
+
+/* Add gold gradient to the chat input container */
+.react-chatbot-kit-chat-input-container {
+  background: linear-gradient(to bottom, #fffffc, #fffcec); /* Gold gradient */
+}
+
+/* Add gold gradient to the message container */
+.react-chatbot-kit-chat-message-container {
+  background: linear-gradient(to bottom, #fff8d3, #fffbe3); /* Gold gradient */
+  overflow-y: auto;
+}
+
+/* Add gold gradient to the chat input */
+.react-chatbot-kit-chat-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Add gold gradient to the send button */
+.react-chatbot-kit-chat-btn-send {
+  background: linear-gradient(to bottom, #ffd700, #66e200); /* Gold gradient */
+  color: #ffffff;
+}
+
+/* Add gold gradient to the bot message container */
+.react-chatbot-kit-chat-bot-message-container {
+  background: none;/* Gold gradient */
+  color: #000000;
+  border-radius: 50%;
+}
+
+/* Add gold gradient to the loading icon container */
+.react-chatbot-kit-chat-bot-loading-icon-container {
+  color: #ffd700; /* Gold color */
+}
+
+/* Add gold gradient to the error container */
+.react-chatbot-kit-error-container {
+  background: linear-gradient(to bottom, #ffd700, #ffd700); /* Gold gradient */
+  color: #cc0000;
+  border: 1px solid #cc0000;
+}
+
+/* Add gold gradient to the error header */
+.react-chatbot-kit-error-header {
+  background: linear-gradient(to bottom, #ffd700, #ffd700); /* Gold gradient */
+  color: #ffffff;
+}
+
+/* Add gold gradient to the error docs */
+.react-chatbot-kit-error-docs {
+  background: linear-gradient(to bottom, #ffd700, #ffd700); /* Gold gradient */
+}
+
+/* Add gold gradient to the chat bot avatar */
+.react-chatbot-kit-chat-bot-avatar {
+  border-radius: 50%; /* Make it round */
+}
+
+/* Add gold gradient to the chat bot avatar icon */
+.react-chatbot-kit-chat-bot-avatar-icon {
+  border-radius: 50%; /* Make it round */
+}
+
+/* Add gold gradient to the chat bot avatar letter */
+.react-chatbot-kit-chat-bot-avatar-letter {
+  border-radius: 50%; /* Make it round */
+}
+
+
+

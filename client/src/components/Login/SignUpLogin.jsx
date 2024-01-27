@@ -24,7 +24,9 @@ const SignUpLogin = () => {
     if (e.target.name === "email") setEmail(e.target.value);
     if (e.target.name === "password") setPassword(e.target.value);
   };
-
+  const propSubmission = () => {
+    navigate("/proplist");
+  };
   // Additional logic or actions to reload the page and clear the fields
   const reloadPageAndClearFields = () => {
     setEmail("");
@@ -148,6 +150,7 @@ const SignUpLogin = () => {
           </Grid>
         </form>
       </div>
+      <button onClick={propSubmission}>Property Form</button>
     </Container>
   );
 };
